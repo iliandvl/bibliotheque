@@ -14,15 +14,28 @@ public class Main {
             }
         }
     }
+
+    public static void retour(Library library){
+        Book book = cherche_livre(library);
+        if (book != null){
+
+        }
+    }
+
+    public static void afficherListeLivres(Library library){
+        for (Book book : library.bookList){
+            System.out.println(book.name + " : " + book.author.name);
+        }
+    }
     public static Book chercheLivre(Library library){
         Scanner scanner = new Scanner(System.in);
         System.out.println("Entrez un nom de livre");
         String name = scanner.next();
         System.out.println("Entrez un nom d'auteur'");
-        String autor = scanner.next();
+        String author = scanner.next();
         boolean bookFound = false;
         for (Book book : library.bookList){
-            if (book.name == name && book.autor.name == autor){
+            if (book.name == name && book.author.name == author){
                 Book wantedBook = book;
                 bookFound = true;
             }
