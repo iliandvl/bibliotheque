@@ -33,18 +33,6 @@ public class Main {
         String name = scanner.next();
         System.out.println("Entrez un nom d'auteur'");
         String author = scanner.next();
-        boolean bookFound = false;
-        for (Book book : library.bookList){
-            if (book.name == name && book.author.name == author){
-                Book wantedBook = book;
-                bookFound = true;
-            }
-        }
-        if (!bookFound){
-            Book noBook = null;
-            return noBook;
-        } else {
-            return wantedBook;
-        }
+
     }
 }

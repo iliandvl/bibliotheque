@@ -3,7 +3,7 @@ public class User extends Person{
 
     private int customerId;
 
-    private int countCustomerId=0;
+    private static int countCustomerId=0;
 
 
 
