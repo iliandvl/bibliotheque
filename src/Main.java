@@ -31,17 +31,10 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Entrez un nom de livre");
         String name = scanner.next();
-        System.out.println("Entrez un nom d'auteur'");
+        System.out.println("Entrez un nom d'auteur (Prenom nom)'");
         String author = scanner.next();
 
-        boolean bookFound = false;
-        Book wantedBook = null;
-        for (Book book : library.getBookList){
-            if (book.getName() == name && book.getAutor() == author){
-                wantedBook = book;
-                bookFound = true;
-            }
-        }
+        Book wantedBook = library.searchBook(name, author);
         return wantedBook;
 
     }
