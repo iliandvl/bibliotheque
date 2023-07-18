@@ -24,21 +24,6 @@ public class Library {
 
     }
 
-
-    boolean bookFound = false;
-        for (Book book : library.bookList){
-        if (book.name == name && book.author.name == author){
-            Book wantedBook = book;
-            bookFound = true;
-        }
-    }
-        if (!bookFound){
-        Book noBook = null;
-        return noBook;
-    } else {
-        return wantedBook;
-    }
-
     public void borrowBook(Book book){
         book.setAvailable(false);
         LocalDate current = LocalDate.now();
@@ -50,5 +35,25 @@ public class Library {
         book.setMaxReturnDate(null);
     }
 
+    public Book searchBook(String name, String author){
+        boolean bookFound = false;
+        Book wantedBook = null;
+        for (HashMap.Entry<String,Book> entry : getBookList().entrySet()){
+            for(Author a : entry.getValue().getAutor())
+                if (entry.getValue().getName() == name && a.getFullName()==author){
+                    wantedBook = entry.getValue();
+                    bookFound = true;
+                }
+        }
+        return wantedBook;
+    }
 
+    public HashMap<String, Book> getBookList() {
+        return bookList;
+    }
 }
+
+
+
+
+
