@@ -29,7 +29,7 @@ public class Main {
 
     public static void afficherListeLivres(Library library){
         for (Map.Entry<String,Book> book : library.getBookList().entrySet()){
-            System.out.println(book.getValue().getName() + " : " + book.getValue().getAutor().toString());
+            System.out.println(book.getValue().getName() + " : " + book.getValue().getAuthor().toString());
         }
     }
     public static Book chercheLivre(Library library){
