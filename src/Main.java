@@ -23,22 +23,20 @@ public class Main {
             switch (response){
                 case 1:
                     emprunt(library);
-
                     break;
                 case 2:
                     retour(library);
-
                     break;
                 case 3:
 
                     break;
                 case 4:
                    afficherListeLivres(library);
-
+                    break;
+                case 0:
                     break;
                 default:
                     System.out.println("Choisir une option valide");
-
             }
         }while (response !=0);
 
@@ -47,6 +45,7 @@ public class Main {
         Book book = chercheLivre(library);
         if (book != null){
         if (book.isAvailable()){
+            System.out.println("Book available");
                 library.borrowBook(book);
             } else {
                 System.out.println("ce livre n'est pas disponible");
@@ -57,6 +56,7 @@ public class Main {
     public static void retour(Library library){
         Book book = chercheLivre(library);
         if (book != null){
+            System.out.println("Book receved");
             library.returnBook(book);
         } else {
             System.out.println("Erreur: livre ne trouve pas le livre");
@@ -79,8 +79,9 @@ public class Main {
         if (wantedBook == null){
             System.out.println("livre introuvable");
         }
-
         return wantedBook;
-
     }
+
+
+
 }
