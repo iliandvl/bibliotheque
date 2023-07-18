@@ -40,9 +40,8 @@ public class Library {
         Book wantedBook = null;
         for (HashMap.Entry<String,Book> entry : getBookList().entrySet()){
             for(Author a : entry.getValue().getAuthor())
-                if (entry.getValue().getName() == name && a.getFullName()==author){
+                if (entry.getValue().getName().equals(name) && a.getFullName().equals(author)){
                     wantedBook = entry.getValue();
-                    bookFound = true;
                 }
         }
         return wantedBook;
