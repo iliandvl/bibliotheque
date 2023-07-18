@@ -50,5 +50,7 @@ public class Library {
         book.setMaxReturnDate(null);
     }
 
-
+    public HashMap<String, Book> getBookList() {
+        return bookList;
+    }
 }
