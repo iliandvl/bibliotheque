@@ -30,7 +30,7 @@ public class Book {
         return name;
     }
 
-    public Author[] getAutor() {
+    public Author[] getAuthor() {
         return author;
     }
 
@@ -60,5 +60,16 @@ public class Book {
 
     public void setMaxReturnDate(LocalDate maxReturnDate) {
         this.maxReturnDate = maxReturnDate;
+    }
+
+    public String getAuthorList(){
+        StringBuilder sb = new StringBuilder();
+        for (Author a : this.getAuthor()){
+
+            sb.append(a.getFullName()+", ");
+        }
+        sb.delete(sb.length()-3, sb.length()-1);
+        String s = sb.toString();
+        return s;
     }
 }
