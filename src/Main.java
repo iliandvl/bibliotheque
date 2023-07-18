@@ -6,6 +6,7 @@ public class Main {
         Library library = new Library("Test");
         library.addBook(new Book("Test","Test",new Author("Test"),new Author("Test"),new Author("Test")));
         afficherListeLivres(library);
+        emprunt(library);
     }
     public static void emprunt(Library library){
         Book book = chercheLivre(library);
@@ -40,6 +41,10 @@ public class Main {
         String author = scanner.next();
 
         Book wantedBook = library.searchBook(name, author);
+        if (wantedBook == null){
+            System.out.println("livre introuvable");
+        }
+
         return wantedBook;
 
     }
