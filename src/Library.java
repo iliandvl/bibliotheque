@@ -14,12 +14,12 @@ public class Library {
         bookList= new HashMap<String, Book>();
     }
 
-    private void addBook(Book book){
+    public void addBook(Book book){
         bookList.put(book.getIsbn(), book);
         book.setAvailable(true);
     }
 
-    private void removeBook(Book book){
+    public void removeBook(Book book){
         bookList.remove(book.getIsbn(), book);
 
     }
