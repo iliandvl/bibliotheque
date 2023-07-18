@@ -8,7 +8,7 @@ public class Main {
         Book book = cherche_livre(library);
         if (book != null){
             if (book.available){
-
+                library.borrowBook(book);
             } else {
                 System.out.println("ce livre n'est pas disponible");
             }
@@ -18,7 +18,7 @@ public class Main {
     public static void retour(Library library){
         Book book = cherche_livre(library);
         if (book != null){
-
+            library.returnBook(book)
         }
     }
 
