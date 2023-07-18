@@ -3,10 +3,45 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
         Library library = new Library("Test");
         library.addBook(new Book("Test","Test",new Author("Test"),new Author("Test"),new Author("Test")));
-        afficherListeLivres(library);
-        emprunt(library);
+
+        int response = 0;
+        Scanner sc = new Scanner(System.in);
+
+
+        do {
+            System.out.println("Choisir une option");
+            System.out.println("0. exit");
+            System.out.println("1. Emprunter un livre");
+            System.out.println("2. Rendre un livre");
+            System.out.println("3. Ajouter un livre dans la bibliothèque");
+            System.out.println("4. Afficher tous les livres");
+            response = 0;
+            response = sc.nextInt();
+            switch (response){
+                case 1:
+                    emprunt(library);
+
+                    break;
+                case 2:
+                    retour(library);
+
+                    break;
+                case 3:
+
+                    break;
+                case 4:
+                   afficherListeLivres(library);
+
+                    break;
+                default:
+                    System.out.println("Choisir une option valide");
+
+            }
+        }while (response !=0);
+
     }
     public static void emprunt(Library library){
         Book book = chercheLivre(library);
