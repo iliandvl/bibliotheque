@@ -4,7 +4,7 @@ public class Book {
 
     private final String name;
 
-    private final Person[] author;
+    private final Author[] author;
 
     String wrintingDate;
 
@@ -14,12 +14,12 @@ public class Book {
 
     private LocalDate maxReturnDate;
 
-    public Book(String name,  String isbn, Person... author){
+    public Book(String name,  String isbn, Author... author){
         this.name=name;
-        this.author=new Person[author.length];
+        this.author=new Author[author.length];
         int i = 0;
-        for (Person p : author){
-            this.author[i]=p;
+        for (Author a : author){
+            this.author[i]=a;
             i++;
         }
         this.isbn=isbn;
@@ -30,7 +30,7 @@ public class Book {
         return name;
     }
 
-    public Person[] getAutor() {
+    public Author[] getAutor() {
         return author;
     }
 
