@@ -19,6 +19,8 @@ public class Main {
         Book book = chercheLivre(library);
         if (book != null){
             library.returnBook(book);
+        } else {
+            System.out.println("Erreur: livre ne trouve pas le livre");
         }
     }
 
