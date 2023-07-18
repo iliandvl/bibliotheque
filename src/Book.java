@@ -68,7 +68,7 @@ public class Book {
 
             sb.append(a.getFullName()+", ");
         }
-        sb.delete(sb.length()-3, sb.length()-1);
+        sb.delete(sb.length()-2, sb.length());
         String s = sb.toString();
         return s;
     }
