@@ -36,7 +36,7 @@ public class Main {
 
         boolean bookFound = false;
         Book wantedBook = null;
-        for (Book book : library.bookList){
+        for (Book book : library.getBookList){
             if (book.getName() == name && book.getAutor() == author){
                 wantedBook = book;
                 bookFound = true;
