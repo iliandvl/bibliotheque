@@ -1,3 +1,4 @@
+import java.util.Map;
 import java.util.Scanner;
 
 public class Main {
@@ -25,8 +26,8 @@ public class Main {
     }
 
     public static void afficherListeLivres(Library library){
-        for (Book book : library.bookList){
-            System.out.println(book.getName() + " : " + book.getAutor());
+        for (Map.Entry<String,Book> book : library.getBookList().entrySet()){
+            System.out.println(book.getValue().getName() + " : " + book.getValue().getAutor().toString());
         }
     }
     public static Book chercheLivre(Library library){
