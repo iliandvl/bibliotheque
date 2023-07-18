@@ -5,11 +5,7 @@ public class Main {
     public static void main(String[] args) {
         Library library = new Library("Test");
         library.addBook(new Book("Test","Test",new Author("Test")));
-        library.toString();
         afficherListeLivres(library);
-        emprunt(library);
-        retour(library);
-        library.removeBook(chercheLivre(library));
     }
     public static void emprunt(Library library){
         Book book = chercheLivre(library);
