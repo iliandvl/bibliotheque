@@ -38,11 +38,12 @@ public class Library {
     public Book searchBook(String name, String author){
         boolean bookFound = false;
         Book wantedBook = null;
-        for (HashMap.Entry<String,Book> entry : getBookList().entrySet()){
-            for(Author a : entry.getValue().getAuthor())
-                if (entry.getValue().getName().equals(name) && a.getFullName().equals(author)){
+        for (HashMap.Entry<String,Book> entry : this.getBookList().entrySet()){
+            for(Author a : entry.getValue().getAuthor()) {
+                if (entry.getValue().getName().equals(name) && a.getFullName().equals(author)) {
                     wantedBook = entry.getValue();
                 }
+            }
         }
         return wantedBook;
     }
